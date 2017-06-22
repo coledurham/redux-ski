@@ -83,14 +83,14 @@ export const suggestions = (state=[], action) => {
       return state
   }
 
-};
+}
 
 export default combineReducers({
   allSkiDays,
   goal,
   errors,
   resortNames: combineReducers({
-      fetching,
-      suggestions
+    fetching,
+    suggestions
+	})
   })
-});
