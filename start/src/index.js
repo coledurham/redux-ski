@@ -1,22 +1,8 @@
 import C from './constants.js';
-import { skiDay } from './store/reducers.js';
+import appReducer from './store/reducers';
+import initialState from './initialState.json';
+import { createStore } from 'redux';
 
-const state = null;
+const store = createStore(appReducer);
 
-const action = {
-  type: C.ADD_DAY,
-  payload: {
-    "resort": "Kirkwood",
-    "date": "2016-12-7",
-    "powder": true,
-    "backcountry": false
-  }
-};
-
-const nextState = skiDay(state, action);
-
-console.log(`
-  initial state: ${state}
-  action: ${JSON.stringify(action)}
-  new state: ${JSON.stringify(nextState)}
-  `);
+console.log('initial state :: ', store.getState());
